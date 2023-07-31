@@ -22,4 +22,4 @@ delete from order_details
 where exists (select product_id from products
 where order_details.product_id not in (products.product_id));
 
-alter table order_details add constraint fk_order_details_products foreign key (products) references products;
+alter table order_details add constraint fk_order_details_products foreign key (product_id) references products;
